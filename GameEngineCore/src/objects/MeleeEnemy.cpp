@@ -7,7 +7,7 @@ namespace spacey{
 			y_coord = 0;
 		}
 
-		MeleeEnemy::MeleeEnemy(int x, int y, int tWidth, int tHeight, string filename){
+		MeleeEnemy::MeleeEnemy(float x, float y, int tWidth, int tHeight, string filename){
 			x_coord = x;
 			y_coord = y;
 			m_texWidth = tWidth;

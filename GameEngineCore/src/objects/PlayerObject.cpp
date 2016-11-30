@@ -33,7 +33,7 @@ namespace spacey{
 			regenHealth();
 
 			if (!shot.empty()){
-				for (int i = 0; i < shot.size(); i++){
+				for (unsigned int i = 0; i < shot.size(); i++){
 					shot[i].Fire();
 					if (shot[i].limit()){
 						shot.erase(shot.begin() + i);

@@ -7,7 +7,7 @@ namespace spacey{ namespace objects{
 		y_coord = 0;
 	}
 
-	BaseEnemy::BaseEnemy(int x, int y, int tWidth, int tHeight, string filename){
+	BaseEnemy::BaseEnemy(float x, float y, int tWidth, int tHeight, string filename){
 		x_coord = x;
 		y_coord = y;
 		m_texWidth = tWidth;
@@ -42,7 +42,7 @@ namespace spacey{ namespace objects{
 		}
 
 		if (!delaware.empty()){
-			for (int i = 0; i < delaware.size(); i++){
+			for (unsigned int i = 0; i < delaware.size(); i++){
 				delaware[i].Fire();
 				if (delaware[i].limit()){
 					delaware.erase(delaware.begin() + i);

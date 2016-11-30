@@ -13,7 +13,7 @@ namespace spacey{
 
 		}
 
-		BaseMedic::BaseMedic(int x, int y, int tWidth, int tHeight, string filename){
+		BaseMedic::BaseMedic(float x, float y, int tWidth, int tHeight, string filename){
 			x_coord = x;
 			y_coord = y;
 			m_texWidth = tWidth;
