@@ -69,7 +69,7 @@ namespace spacey{
 		}
 
 		void PlayerObject::checkRotation(Motion* motion){
-			direction = motion->angle;
+			direction = (int)motion->angle;
 
 			if (direction == 0){
 				direction = 1;

@@ -36,7 +36,7 @@ namespace spacey{
 		private: //Misc
 			Window* m_window;
 			Motion* motionObj;
-			float direction = 3;
+			int direction = 3;
 
 		private: //Clock varaibles
 			clock_t start;
