@@ -2,12 +2,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Audio/Music.hpp>
 #include "src\graphics\bg_Texture.h"
-
-#include "src\objects\Inventory.h"
-
 #include <stdlib.h>
-
-#include <thread>
 
 using namespace spacey;
 using namespace graphics;
