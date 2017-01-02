@@ -42,13 +42,14 @@ int main(){
 	gluOrtho2D(0, width, height, 0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-
+	
 	//Setting the background image
 	bg_Texture background(&start, "Resources/Images/start_screen.png", 0, 0, 960, 720, false);
 
 	//Creating buttons for the start screen
 	button b_start(&start, 900, 135, 220, 120, "Resources/Images/empty_button.png");
 	button b_exit(&start, (width / 2) + 20, (height / 2) + 60, 50, 40, "Resources/Images/empty_button.png");
+	button b_credits(&start, (830 <= width <= 950) (320 <= height <= 362) "Resources/Images/empty_button.png");
 	bool exit = true; //This value keeps track of if the player wants the exit the program
 
 	//While loop for events happening in the start screen
@@ -71,7 +72,11 @@ int main(){
 		else if (b_exit.clicked()){
 			start.~Window();
 		}
+		else if (b_credits.clicked()){
+			bg_Texture background(&start, "Resources/Images/credits_screen.png", 0, 0, 960, 720, true);
+		}
 
+			
 		//Update the start screen to display all of the image changes
 		start.update();
 	}
