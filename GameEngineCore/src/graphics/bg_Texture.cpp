@@ -13,6 +13,7 @@ namespace spacey{
 			x_coord = x;
 			y_coord = y;
 			m_window = window;
+
 			imageLoaded = loadBG(filename); //Filling parameters
 
 			if (imageLoaded)
@@ -25,6 +26,13 @@ namespace spacey{
 			this->height = height;
 
 			paral = parallax;
+		}
+
+		void bg_Texture::imageReplace(string filename){
+			imageLoaded = loadBG(filename);
+
+			if (imageLoaded)
+				cout << "Loaded background image.\n";
 		}
 
 		void bg_Texture::Draw(){

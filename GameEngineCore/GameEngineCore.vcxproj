@@ -130,6 +130,7 @@
   <ItemGroup>
     <Image Include="Resources\Images\Base_Bullet.png" />
     <Image Include="Resources\Images\BG.png" />
+    <Image Include="Resources\Images\credits_screen.png" />
     <Image Include="Resources\Images\start_screen.png" />
     <Image Include="Resources\Images\FloorTile1.png" />
     <Image Include="Resources\Images\Inventory.png" />

@@ -49,9 +49,14 @@ int main(){
 	//Creating buttons for the start screen
 	button b_start(&start, 900, 135, 220, 120, "Resources/Images/empty_button.png");
 	button b_exit(&start, (width / 2) + 20, (height / 2) + 60, 50, 40, "Resources/Images/empty_button.png");
-	button b_credits(&start, (830 <= width <= 950) (320 <= height <= 362) "Resources/Images/empty_button.png");
+	button b_credits(&start, 900, 340, 140, 40, "Resources/Images/empty_button.png");
+	button b_back(&start, 256, 500, 220, 120, "Resources/Images/empty_button.png");
+	button b_options(&start, 900, 280, 130, 40, "Resources/Images/empty_button.png");
 	bool exit = true; //This value keeps track of if the player wants the exit the program
-
+	bool ifCreditsClicked = false; 
+	bool ifOptionsClicked = false;
+	
+//Button stuff: X Y ButtonLength ButtonWidth
 	//While loop for events happening in the start screen
 	while (!start.closed()){
 		//Clear all drawn images
@@ -61,8 +66,19 @@ int main(){
 		background.Draw(); 
 
 		//Draw the buttons over the background
-		b_start.draw();
-		b_exit.draw();
+		if (!ifCreditsClicked && !ifOptionsClicked){
+			b_start.draw();
+			b_exit.draw();
+			b_credits.draw();
+			b_options.draw();
+
+		}
+		else{
+			b_back.draw();
+			
+		}
+
+		
 
 		//Check if the start or exit button were clicked by checking the return value of their "clicked" function
 		if (b_start.clicked()){
@@ -73,10 +89,17 @@ int main(){
 			start.~Window();
 		}
 		else if (b_credits.clicked()){
-			bg_Texture background(&start, "Resources/Images/credits_screen.png", 0, 0, 960, 720, true);
+			background.imageReplace("Resources/Images/credits_screen.png");
+			ifCreditsClicked = true;
 		}
-
-			
+		else if (b_options.clicked()){
+			background.imageReplace("Resources/Images/options_screen.png");
+			ifOptionsClicked = true;
+		}
+		else if (b_back.clicked()){
+			background.imageReplace("Resources/Images/start_screen.png");
+			ifOptionsClicked = false;
+		}
 		//Update the start screen to display all of the image changes
 		start.update();
 	}
