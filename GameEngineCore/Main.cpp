@@ -55,7 +55,7 @@ int main(){
 	bool exit = true; //This value keeps track of if the player wants the exit the program
 	bool ifCreditsClicked = false; 
 	bool ifOptionsClicked = false;
-	
+
 //Button stuff: X Y ButtonLength ButtonWidth
 	//While loop for events happening in the start screen
 	while (!start.closed()){
@@ -128,31 +128,14 @@ int main(){
 		glLoadIdentity();
 		
 		//Background (or floor) image setup
-		bg_Texture floor(&window, "Resources/Images/FloorTile1.png", -800, -600, 1600, 1200, true);
+		bg_Texture floor(&window, "Resources/Images/whatisthis.png", -800, -600, 1600, 1200, true);
 
 		//Object (class) initialization (set-up) for objects we will need during runtime
-		
-		Motion motion; //Keeps track of all moving objects: speed, roations, etc
-		PlayerObject player(&window, &motion, "Resources/Images/Multi-Layer.png", 37, 37); //Player instance, handles input
 		BG test(&window); //BG (background) object, contains all in game objects: Walls, enemies, collision detection, etc
-		
-		//File loading for level setup
-		test.loadFile("Resources/Levels/Wall.txt", "ENVIRONMENT");
-		//test.loadFile("Resources/Levels/Doors.txt", "ENVIRONMENT");
-		/*test.loadFile("Resources/Levels/Medics.txt", "ENTITY");
-		test.loadFile("Resources/Levels/Enemy.txt", "ENTITY");
-		test.loadFile("Resources/Levels/MeleeEnemy.txt", "ENTITY");*/
 				
 		//Main game loop
 		while (!window.closed()){
 			window.clear(); //Clear the screen
-
-			//Get input values from the player in the current window
-			checkForInput(&window, &motion, test); 
-			
-			floor.Draw(); //Draw the floor first
-			test.update(&motion, &player); //Update (and draw) all in game objects
-			player.Draw(); //Draw the player on the very top so it is always visible
 
 			window.update(); //Update the window to display all new changes
 			Sleep(0.5); //Controls how fast the game loop runs at max, ignore this line
