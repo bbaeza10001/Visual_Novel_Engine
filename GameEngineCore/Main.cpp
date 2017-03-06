@@ -99,6 +99,7 @@ int main(){
 		else if (b_back.clicked()){
 			background.imageReplace("Resources/Images/start_screen.png");
 			ifOptionsClicked = false;
+			ifCreditsClicked = false;
 		}
 		//Update the start screen to display all of the image changes
 		start.update();
